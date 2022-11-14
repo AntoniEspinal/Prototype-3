@@ -274,6 +274,8 @@ GameObject:
   - component: {fileID: 835818921}
   - component: {fileID: 835818920}
   - component: {fileID: 835818922}
+  - component: {fileID: 835818923}
+  - component: {fileID: 835818924}
   m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
@@ -355,6 +357,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45324d0c28cc344e088a08e738d1c32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &835818923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835818919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75daa8b78cfe64aa1bc4afa9075853bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &835818924
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835818919}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 112.79999, y: 18.779999, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &962753741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 872310705185124922, guid: 9884bd52993744f43a129fb5a4b1aca0,
@@ -717,6 +744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 872310705185124922, guid: 9884bd52993744f43a129fb5a4b1aca0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9884bd52993744f43a129fb5a4b1aca0, type: 3}
