@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     public float jumpForcue;
+    public bool midAir = true;
+    int delayTime = 1;
+    private float extraDelay = 1;
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver = false;
@@ -28,13 +31,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             playerRb.AddForce(Vector3.up * jumpForcue,ForceMode.Impulse);
             isOnGround = false;
+            midAir = true;
             playerAnim.SetTrigger("Jump_trig");
             dirtPartical.Stop();
             playerAudio.PlayOneShot(jumpSound, 1.0f); 
+        }
+        if (Input.GetKey(KeyCode.Z) && midAir)
+        {
+            playerRb.AddForce(Vector3.up * jumpForcue,ForceMode.Impulse);
+            midAir = false;
+            playerAnim.SetTrigger("Jump_trig");
         }
     }
     private void OnCollisionEnter(Collision collision)
